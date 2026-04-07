@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# 🎬 CineBoard — Production Bible
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Workshop Edition** — Esta versión fue creada en vivo durante un workshop usando **Vibe Coding** directamente en **GitHub Copilot Agent Mode**.
 
-Currently, two official plugins are available:
+CineBoard es una aplicación web interactiva que funciona como una "biblia de producción" digital para producciones audiovisuales. Permite a cada departamento de una producción tener su propio espacio organizado con tareas, documentos, comentarios y actividad en tiempo real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Origen
 
-## React Compiler
+Esta app nació de una necesidad real: Sofía, estudiante de cine de 21 años y asistente de dirección, necesitaba una herramienta para organizar la pre-producción de sus proyectos. Todo estaba disperso en Google Drive, WhatsApp y documentos sueltos. CineBoard resuelve eso con un espacio centralizado y accesible para todo el equipo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Vibe Coding + Agent Mode
 
-## Expanding the ESLint configuration
+Esta versión fue construida **completamente con Vibe Coding** usando GitHub Copilot en Agent Mode:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Sin código escrito manualmente** — todo fue generado por el agente a partir de los requerimientos de la stakeholder
+- **Desde cero hasta app funcional** en una sesión de workshop
+- El agente configuró el proyecto, eligió el stack, creó los modelos de datos, diseñó los componentes y resolvió los errores de build de forma autónoma
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Dashboard** con estadísticas generales y progreso por departamento
+- **8 departamentos** — Fotografía, Dirección de Arte, Cinematografía, Sonido, Producción, Vestuario, Maquillaje, Edición
+- **Workspace por departamento** con tabs de Checklist, Documentos y Equipo
+- **Tareas interactivas** — marcar como completadas, expandir detalles, agregar comentarios
+- **Crear nuevas tareas** por departamento
+- **Feed comunitario** — actividad en tiempo real de toda la producción
+- **Vista de documentos** — mood boards, spreadsheets, links e imágenes organizados por departamento
+- **Sidebar responsiva** con navegación mobile
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Stack técnico
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React 19 + TypeScript
+- Vite 8
+- Tailwind CSS v4 + shadcn/ui
+- Zustand (state management)
+- Lucide React (icons)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Cómo ejecutar
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
 ```
